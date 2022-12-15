@@ -1,0 +1,34 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+<main class="main">
+<section class="titles">
+<h1 class="title">Generate a <br><span style="color: #4ADF86">random password</span></h1>
+<h3 class="sub-title">Never use an insecure password again.</h3>
+</section>
+<button type="submit" class="gen-btn" id="gen-btn">Generate passwords</button>
+<section class="input-sec">
+<input type="text" class="input one" id="input-one"/>
+<input type="text" class="input two" id="input-two"/>
+</section>
+<section class="more-or-less" id="more-or-less">
+<input type="button" class="btn lessBtn" id="lessBtn" value="-" />
+<input type="number" step="1" min="5" max="12" class="num-input" id="num-input" name="num-input" value="5"/>
+<input type="button" class="btn moreBtn" id="moreBtn" value="+" />
+</section>
+<p class="message" id="message">Password Copied!</p>
+</main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
