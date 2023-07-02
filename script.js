@@ -23,24 +23,26 @@ inputOne.addEventListener("click", copy);
 inputOne.addEventListener("focusout", copy);
 inputTwo.addEventListener("click", copy);
 inputTwo.addEventListener("focusout", copy);
+
 //Increment password
 function addOne() {
-passWordLength++;
-numInput.value = passWordLength;
-if (passWordLength >= 12) {
-numInput.value = 12;
-passWordLength = 12;
-}
+ passWordLength++;
+ numInput.value = passWordLength;
+ if (passWordLength >= 12) {
+      numInput.value = 12;
+      passWordLength = 12;
+   }
 }
 //Decrement password
 function minusOne() {
-passWordLength--;
-numInput.value = passWordLength;
-if (passWordLength <= 5) {
-numInput.value = 5;
-passWordLength = 5
+   passWordLength--;
+   numInput.value = passWordLength;
+    if (passWordLength <= 5) {
+ numInput.value = 5;
+ passWordLength = 5
+ }
 }
-}
+
 //Generate password string
 function pass() {
 let index = characters[Math.floor(Math.random() * characters.length)]
@@ -48,34 +50,37 @@ return index
 }
 function generatePass() {
 message.style.opacity = 0;
-let newPass = ''
-for (let i = 0; i < passWordLength;i++){
-newPass += pass()
+ let newPass = ''
+ for (let i = 0; i < passWordLength;i++){
+     newPass += pass()
 }
-return newPass
+    return newPass
 }
 function render() {
-message.style.opacity = 0;
-inputOne.value = "";
-inputTwo.value = "";
-inputOne.value = generatePass()
-inputTwo.value = generatePass()
+  message.style.opacity = 0;
+   inputOne.value = "";
+   inputTwo.value = "";
+   inputOne.value = generatePass()
+   inputTwo.value = generatePass()
 }
 function copy() {
 if (this.value === "") {
-btn.style.backgroundColor = "red";
-btn.style.border ="1px solid red";
-} else {
+  btn.style.backgroundColor = 'white';
+  btn.style.color = '#10B981';
+} 
+else {
 this.select();
 navigator.clipboard.writeText(this.value);
-message.style.opacity = 1;
+  message.style.opacity = 1;
 }
+setTimeout(() => {
+    inputOne.value = '';
+    inputTwo.value = '';
+    btn.style.backgroundColor = '#10B981';
+    btn.style.color = 'white';
+  }, 5000);
+
+  setTimeout(() => {
+    message.style.opacity = 0
+  }, 3000)
 }
-// function fade() {
-// if (this.value === "") {
-// btn.style.backgroundColor = "";
-// btn.style.border = "";
-// } else {
-// message.style.opacity = 0;
-// }
-// }
